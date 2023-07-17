@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random quotes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <style>
+        body{
+            background-image: url(/randomquotes/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        @media (max-width: 767px) {
+            body {
+              background-image: url(/randomquotes/mb.jpg);
+              background-size: cover;
+                background-clip: border-box;
+            }
+          }
+
+        .quotes p{
+            font-family: 'Poppins', sans-serif;
+            font-style: italic;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-[13%]  w-[50%] text-center font-md font-sans font-bold  m-auto bg-white bg-opacity-25 backdrop-filter backdrop-blur-lg rounded-lg ">
+        <p class="mt-[5vw] bg-[#2a3534] text-gray-100 uppercase p-3">Random Quote Generator</p>
+        <div class="quotes relative p-6 text-gray-100">
+            <p id="quote" class="mt-4 text-xl">"None of you truly believes until he wishes for his brother
+                 what he wishes for himself." <br> ~ Prophet SAW </p> 
+            <button id="quoteBtn" class="mt-[3vw] uppercase bg-[#2a3534] p-2 rounded-md">Click To Get Quote</button>
+        </div>
+    </div>
+
+    <script>
+        const quoteList = [
+        '\"Verily, with every difficulty, there is relief.\"<br>(Quran 94:5)',
+        '\"And We will surely test you with something of fear and hunger and a loss of \
+        wealth and lives and fruits, but give good tidings to the patient.\"<br>(Quran 2:155)',
+        '\"And We have certainly created man to be in hardship.\"<br>(Quran 90:4)',
+        '\"And whoever puts their trust in Allah, then He will suffice him.\"<br>(Quran 65:3)',
+        '\"So, verily, with every difficulty, there is relief, verily, with every difficulty,  \
+        there is relief.\"<br>(Quran 94:5-6)',
+        '\"Indeed, Allah is with the patient.\"<br>(Quran 2:153)',
+        '\"And seek help through patience and prayer, and indeed, it is difficult except for \
+        the humbly submissive.\"<br>(Quran 2:45)',
+        '\"And whoever fears Allah - He will make for him a way out.\"<br>(Quran 65:2)',
+        '\"Indeed, after hardship, there is ease.\"<br>(Quran 94:6)',
+        '\"And your Lord is going to give you, and you will be satisfied.\"<br>(Quran 93:5)',
+        '\"Indeed, Allah is with those who are patient.\"<br>(Quran 8:46)',
+        '\"And He found you lost and guided [you].\"<br>(Quran 93:7)',
+        '\"And Allah is the best of providers.\"<br>(Quran 62:11)',
+        '\"Indeed, the help of Allah is near.\"<br>(Quran 2:214)',
+        '\"Indeed, my Lord is near and responsive.\"<br>(Quran 11:61)',
+        '\"And rely upon Allah; and sufficient is Allah as Disposer of affairs.\"<br>(Quran 33:3)',
+        '\"And whoever relies upon Allah - then He is sufficient for him.\"<br>(Quran 65:3)',
+        '\"And [remember] when you were few and oppressed in the land, fearing that people might \
+        abduct you, but He sheltered you and supported you with His victory.\"<br>(Quran 8:26)',
+        '\"And when I am ill, it is He who cures me.\"<br>(Quran 26:80)',
+        '\"And be patient, for indeed, Allah does not allow to be lost the reward of \
+        those who do good.\"<br>(Quran 11:115)'
+      ];
+
+        const quoteElement = document.getElementById("quote");
+        const quoteBtn = document.getElementById("quoteBtn");
+
+        quoteBtn.addEventListener("click", function() {
+            const randomIndex = Math.floor(Math.random() * quoteList.length);
+            const randomQuote = quoteList[randomIndex];
+            quoteElement.innerHTML = randomQuote;
+        });
+    </script>
+</body>
+</html>
